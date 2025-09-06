@@ -1,28 +1,31 @@
 # E-Commerce Website (MERN Stack)
 
-## Description
-This project is a fully functional e-commerce website built using the MERN (MongoDB, Express, React, Node.js) stack. It features user authentication, product management, a shopping cart, order placement, and payment gateway integration. The admin dashboard allows for efficient store management, including order tracking and product uploads.
+Project Description: EcoFinds - Sustainable Second-Hand Marketplace
+EcoFinds is a sustainable second-hand marketplace platform designed to promote responsible consumption and extend the lifecycle of everyday products. Created with the mission of empowering users to buy and sell pre-owned items with ease, EcoFinds aims to be a trusted, community-driven hub for eco-conscious consumers.
 
-## Features
-- **Frontend**: Built with Vite React, including pages for home, collections, product details, cart, orders, login, about, and contact.
-- **Backend**: Node.js and Express handle APIs, user authentication, and database management.
-- **Authentication**: Secure user and admin authentication using JWT.
-- **Product Management**: Upload, edit, and delete products via an admin dashboard.
-- **Cart & Order Management**: Add products to the cart, place orders, and track them in the admin panel.
-- **Payment Integration**: Supports Stripe and Razorpay for secure transactions.
-- **Image Uploads**: Uses Cloudinary and Multer for efficient image storage and handling.
-- **Deployment**: Fully deployed on Vercel for easy access.
+The platform addresses the growing need for sustainable alternatives to consumerism by offering a user-friendly and intuitive desktop and mobile application that allows users to register, create personal profiles, list items for sale, and browse or search for second-hand goods. It fosters a circular economy, reduces environmental impact, and makes finding unique and affordable items more accessible.
+
+The application includes essential features such as secure user authentication, product listing management, keyword search, category filtering, and a clean product browsing interface. It also supports basic cart functionality and allows users to view their previous purchases. A strong emphasis is placed on trust, transparency, and ease of use—core values that help create a positive user experience and reinforce EcoFinds’ vision of a sustainable future.
+
+Core Features Included in the Prototype:
+User Authentication: Secure login and registration system via email and password.
+Profile Creation and Dashboard: Users can set and edit their username and profile details.
+Product Listings (CRUD): Users can create, edit, view, and delete product listings with a title, category, description, price, and image placeholder.
+Product Feed and Browsing: Listings are displayed in a feed with filters by category and a keyword search.
+Product Detail View: Displays full information of selected products.
+Shopping Cart: Allows users to add products for future checkout.
+Previous Purchases View: Displays a history of past purchases made by the user.
 
 ## Project Structure
-1. **Frontend**: Vite React setup, routing, and UI components.
-2. **Backend**: API development with Express and MongoDB.
-3. **Authentication**: User registration and admin verification.
-4. **Product Features**: Uploading and displaying products.
-5. **Cart & Orders**: Managing user purchases and tracking orders.
-6. **Admin Dashboard**: Overview and control over website operations.
-7. **Payments**: Secure integration with Stripe and Razorpay.
-8. **Image Uploads**: Implemented using Cloudinary and Multer.
-9. **Deployment**: Final hosting on Vercel.
+1. Frontend: Vite React setup, routing, and UI components.
+2. Backend: API development with Express and MongoDB.
+3. Authentication: User registration and admin verification.
+4. Product Features: Uploading and displaying products.
+5. Cart & Orders: Managing user purchases and tracking orders.
+6. Admin Dashboard: Overview and control over website operations.
+7. Payments: Secure integration with Stripe and Razorpay.
+8. Image Uploads: Implemented using Cloudinary and Multer.
+9. Deployment: Final hosting on Vercel.
 
 ## Installation
 1. Clone the repository:
@@ -64,16 +67,3 @@ This project is a fully functional e-commerce website built using the MERN (Mong
 - **Payment**: Stripe, Razorpay
 - **Image Uploads**: Cloudinary, Multer
 - **Deployment**: Vercel
-
-## Deployment
-To deploy the project on Vercel:
-1. Push the code to GitHub.
-2. Connect the repository to Vercel.
-3. Deploy both the frontend and backend separately.
-
-## Contributors
-- **Divanshi Jain** - [GitHub Profile](https://github.com/DivanshiJain2005)
-
-## License
-This project is licensed under the MIT License.
-
