@@ -6,12 +6,18 @@ import { ShopContext } from '../context/ShopContext';
 const NavBar = () => {
     const [visible, setVisible] = useState(false);
     const {setShowSearch, getCartCount, navigate, token, setToken, setCartItems} = useContext(ShopContext);
+    
+    // Add this to your ShopContext or determine admin status however you prefer
+    // For now, I'll assume you have an isAdmin property in context or you can hardcode it
+    const isAdmin = true; // Change this to your actual admin check logic
+    
     const logout = () => {
       navigate('/login')
       localStorage.removeItem('token')
       setToken('')
       setCartItems({})
     }
+
   return (
     <div className="flex items-center justify-between py-5 font-medium">
       {/* Logo */}
@@ -43,6 +49,15 @@ const NavBar = () => {
             <hr className="w-2/4 border-none h-1.5 bg-gray-700 group-hover:block hidden" />
           </NavLink>
         </li>
+        {/* Products Management - Only show for logged in users */}
+        {token && (
+          <li>
+            <NavLink to="/my-products" className="flex flex-col items-center gap-1">
+              <p>MY PRODUCTS</p>
+              <hr className="w-2/4 border-none h-1.5 bg-gray-700 group-hover:block hidden" />
+            </NavLink>
+          </li>
+        )}
       </ul>
 
       {/* Profile and Cart */}
@@ -55,6 +70,11 @@ const NavBar = () => {
             <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded">
               <p className="cursor-pointer hover:text-black">My Profile</p>
               <p onClick={()=> navigate('/orders')} className="cursor-pointer hover:text-black">Orders</p>
+              {/* Product Management Options */}
+              <hr className="border-gray-300" />
+              <p onClick={()=> navigate('/my-products')} className="cursor-pointer hover:text-black">My Products</p>
+              <p onClick={()=> navigate('/add-product')} className="cursor-pointer hover:text-black">Add Product</p>
+              <hr className="border-gray-300" />
               <p onClick={logout} className="cursor-pointer hover:text-black">Logout</p>
             </div>
           </div>}
@@ -68,6 +88,8 @@ const NavBar = () => {
         </Link>
         <img onClick={()=>setVisible(true)} src={assets.menu_icon} className='w-5 cursor-pointer sm:hidden' alt="" />
       </div>
+      
+      {/* Mobile Menu */}
       <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${visible ? 'w-full' : 'w-0'}`}>
         <div className="flex flex-col text-gray-600">
             <div onClick={() => setVisible(false)} className="flex items-center gap-4 p-3">
@@ -78,6 +100,13 @@ const NavBar = () => {
             <NavLink onClick={()=>setVisible(false)} className='py-2 pl-6 border' to="/collection">COLLECTION</NavLink>
             <NavLink onClick={()=>setVisible(false)} className='py-2 pl-6 border' to="/about">ABOUT</NavLink>
             <NavLink onClick={()=>setVisible(false)} className='py-2 pl-6 border' to="/contact">CONTACT</NavLink>
+            {/* Mobile Product Management - P2P Marketplace */}
+            {token && (
+              <>
+                <NavLink onClick={()=>setVisible(false)} className='py-2 pl-6 border' to="/my-products">MY PRODUCTS</NavLink>
+                <NavLink onClick={()=>setVisible(false)} className='py-2 pl-6 border' to="/add-product">SELL ITEM</NavLink>
+              </>
+            )}
         </div>
         </div>
     </div>

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
@@ -8,13 +9,15 @@ import Cart from './pages/Cart';
 import Login from './pages/Login';
 import PlaceOrder from './pages/PlaceOrder';
 import Orders from './pages/Orders';
-import Collection from './pages/Collection'; 
+import Collection from './pages/Collection';
+import AddProduct from './pages/addProduct';
+import MyProducts from './pages/Myproduct';
+
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import SearchBar from './components/SearchBar';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
 
 const App = () => {
   return (
@@ -32,6 +35,8 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/place-order" element={<PlaceOrder />} />
         <Route path="/orders" element={<Orders />} />
+        <Route path="/add-product" element={<AddProduct />} /> {/* ✨ Add this route */}
+         <Route path="/my-products" element={<MyProducts />} /> 
       </Routes>
       <Footer/>
     </div>
